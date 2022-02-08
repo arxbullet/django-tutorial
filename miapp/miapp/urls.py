@@ -16,6 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+#importar app con mis vistas
+from aprendiendoDjango import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('hola-mundo/', views.hola_mundo, name='hola_mundo')#paso el nombre  de la ruta y la funcion a ajecutar
 ]
+
+#aca debo cargar mis vistas 
+
