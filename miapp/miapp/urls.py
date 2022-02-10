@@ -19,8 +19,14 @@ from django.urls import path
 #importar app con mis vistas
 from aprendiendoDjango import views
 
+#tambien se puede importar de otras formas
+#import miapp.views (pero ahi se deben llamar como miapp.views.index)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #se puede reutilizar la misma vista varias veces con distintas url
+    path('', views.index , name='inicio'),#al pasar el primer algumento vacio hacemos que sea la ruta principal
+    path('pagina/pruebas', views.pagina , name='pagina'), 
     path('hola-mundo/', views.hola_mundo, name='hola_mundo')#paso el nombre  de la ruta y la funcion a ajecutar
 ]
 
