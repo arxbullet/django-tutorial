@@ -28,6 +28,8 @@ urlpatterns = [
     path('', views.index , name='inicio'),#al pasar el primer algumento vacio hacemos que sea la ruta principal
     path('pagina-pruebas', views.pagina , name='pagina'), 
     path('pagina-contactos/<str:nombre>', views.contacto , name='contactos'), #pasar parametros con <>
+    #para que la ruta de arriba no de errores si llega el parametro, debo configurar una ruta para cada caso
+    path('pagina-contactos/', views.contacto , name='contactos'),
     path('holamundo', views.hola_mundo, name='hola_mundo')#paso el nombre  de la ruta y la funcion a ajecutar
 ]
 
