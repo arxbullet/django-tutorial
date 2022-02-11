@@ -7,9 +7,26 @@ from django.shortcuts import render, HttpResponse
 
 
 def index(request):#inicio
-    return HttpResponse("""
+    #tambien puedo devolver un html en una variable
+    html = """
     <h1>inicio</h1>
-    """)
+    <p> años hasta el 2050: </p>
+    <ul>
+    """
+    
+
+    #tambien puedo usar todo tipo de logicas de python
+
+    year = 2021
+    while year <= 2050 :
+        html += f'<li>{str(year)}</li>'
+        year += 1
+    
+    html += '</ul>'
+    return HttpResponse(html)
+    '''return HttpResponse("""
+    <h1>inicio</h1>
+    """)'''
 
 def pagina(request):
     return HttpResponse("""
