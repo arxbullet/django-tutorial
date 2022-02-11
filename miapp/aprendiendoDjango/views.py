@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
 
@@ -44,7 +44,11 @@ def index(request):#inicio
     <h1>inicio</h1>
     """)'''
 
-def pagina(request):
+def pagina(request, redirigir = 0):
+    if redirigir == 1 :
+        return redirect('/')
+        #tambien puedo pasarle un nombre de ruta y sus parametros
+        #return redirect('inicio', nombre = 'vale')
     return HttpResponse(layout+"""
     <h1>pagina de mi web</h1>
     """)
