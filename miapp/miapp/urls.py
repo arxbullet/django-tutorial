@@ -26,7 +26,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #se puede reutilizar la misma vista varias veces con distintas url
     path('', views.index , name='inicio'),#al pasar el primer algumento vacio hacemos que sea la ruta principal
-    path('pagina-pruebas', views.pagina , name='pagina'), 
+    #redirecciones , ejemplo pafina pruebas
+    path('pagina-pruebas', views.pagina , name='pagina'),
+    path('pagina-pruebas/<int:redirigir>', views.pagina , name='pagina'),  
     path('pagina-contactos/<str:nombre>', views.contacto , name='contactos'), #pasar parametros con <>
     #para que la ruta de arriba no de errores si llega el parametro, debo configurar una ruta para cada caso
     path('pagina-contactos/', views.contacto , name='contactos'),
