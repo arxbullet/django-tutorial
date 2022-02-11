@@ -5,6 +5,21 @@ from django.shortcuts import render, HttpResponse
 #mvc = modelo vista controlador
 #mvt = modelo vista templates
 
+#para indexar y enlazar mis vistas, puedo enlazar un menu dentro de la misma 
+#funcion, o puedo hacer un layout que se cargue en cada vista
+layout = """
+    <h1>
+    sitio web con django
+    </h1>
+    <ul>
+    <li> <a href = '/'> inicio </a> </li>
+    <li> <a href = '/holamundo'> hola mundo </a> </li>
+    <li> <a href = '/pagina-pruebas'> pagina pruebas </a> </li>
+    <li> <a href = '/pagina-contactos'> pagina contactos </a> </li>
+    </ul>
+
+"""
+
 
 def index(request):#inicio
     #tambien puedo devolver un html en una variable
@@ -14,7 +29,6 @@ def index(request):#inicio
     <ul>
     """
     
-
     #tambien puedo usar todo tipo de logicas de python
 
     year = 2021
@@ -23,20 +37,31 @@ def index(request):#inicio
         year += 1
     
     html += '</ul>'
-    return HttpResponse(html)
+
+    #concatenare el layout al html 
+    return HttpResponse(layout+ html)
     '''return HttpResponse("""
     <h1>inicio</h1>
     """)'''
 
 def pagina(request):
-    return HttpResponse("""
+    return HttpResponse(layout+"""
     <h1>pagina de mi web</h1>
     """)
 
+# pasar parametros por las rutas
+def contacto(request, nombre):
+    return HttpResponse(layout+f"""
+    <h1>pagina contactos</h1>
+    <h2>{nombre}</h2>
+    """)
+    #puedo tener cuantos parametros necesite.
+
 def hola_mundo(request):
     #return HttpResponse('holamundo con django') esto es una respuesta http
-    return HttpResponse("""<h1>holamundo con django</h1>""") #tambien puedo devolver html
+    return HttpResponse(layout+"""<h1>holamundo con django</h1>""") #tambien puedo devolver html
 
 
 #para que este metodo funcione debo cargarlo en una url en urls.py
+
 

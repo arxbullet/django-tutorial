@@ -26,8 +26,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #se puede reutilizar la misma vista varias veces con distintas url
     path('', views.index , name='inicio'),#al pasar el primer algumento vacio hacemos que sea la ruta principal
-    path('pagina/pruebas', views.pagina , name='pagina'), 
-    path('hola-mundo/', views.hola_mundo, name='hola_mundo')#paso el nombre  de la ruta y la funcion a ajecutar
+    path('pagina-pruebas', views.pagina , name='pagina'), 
+    path('pagina-contactos/<str:nombre>', views.contacto , name='contactos'), #pasar parametros con <>
+    path('holamundo', views.hola_mundo, name='hola_mundo')#paso el nombre  de la ruta y la funcion a ajecutar
 ]
 
 #aca debo cargar mis vistas 
