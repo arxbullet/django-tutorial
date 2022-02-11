@@ -50,7 +50,8 @@ def pagina(request):
     """)
 
 # pasar parametros por las rutas
-def contacto(request, nombre):
+def contacto(request, nombre='valentina'):#para que este codigo no de error si no llegan los 
+    #parametros, podemos darle valor por defecto a los parametros
     return HttpResponse(layout+f"""
     <h1>pagina contactos</h1>
     <h2>{nombre}</h2>
