@@ -52,18 +52,15 @@ def pagina(request, redirigir = 0):
         return redirect('/')
         #tambien puedo pasarle un nombre de ruta y sus parametros
         #return redirect('inicio', nombre = 'vale')
-    return HttpResponse(layout+"""
-    <h1>pagina de mi web</h1>
-    """)
+        #return HttpResponse(layout+"""<h1>pagina de mi web</h1>""")
+    return render(request, 'paginaprueba.html')
 
 # pasar parametros por las rutas
 def contacto(request, nombre='valentina'):#para que este codigo no de error si no llegan los 
     #parametros, podemos darle valor por defecto a los parametros
-    return HttpResponse(layout+f"""
-    <h1>pagina contactos</h1>
-    <h2>{nombre}</h2>
-    """)
+    return HttpResponse(layout+f"""<h1>pagina contactos</h1><h2>{nombre}</h2>""")
     #puedo tener cuantos parametros necesite.
+    #return render(request, 'contactos.html')
 
 def hola_mundo(request):
     #return HttpResponse('holamundo con django') esto es una respuesta http
