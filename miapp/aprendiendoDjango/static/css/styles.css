@@ -20,7 +20,31 @@ body{
 header{
     width: 1212px;
     height: 140px;
-    background-color: aqua;
+    background-color: black;
     color: white;
     margin: auto;
+}
+
+#logotipo{
+    width: 35%;
+    height: 140px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+#logotipo img{
+    display: block;
+    float: left;
+    width: 60px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+#logotipo h1{
+    display: block;
+    margin-top: 20px;
+    margin-left: 20px;
+    letter-spacing: 2px;
+    font-weight: 100;
+    color: #2ba977;
 }
