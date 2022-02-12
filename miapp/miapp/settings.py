@@ -35,8 +35,10 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    #cargar mi app para que funcionen mis configuraciones,
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'aprendiendoDjango'
 ]
 
 MIDDLEWARE = [
