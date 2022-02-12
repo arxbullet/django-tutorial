@@ -6,7 +6,8 @@
     </head>
     <body>
         <h1>{% block title%}
-            {% endblock %}</h1>
+            {% endblock %}
+        </h1>
         <ul>
             <li> <a href = '/'> inicio </a> </li>
             <li> <a href = '/holamundo'> hola mundo </a> </li>
@@ -19,6 +20,7 @@
         para eso dentro de cada template extendimos a que bloque sustituiran-->
         <div id="content">
             {% block content%}
+            <strong>contenido por defecto</strong>
             {% endblock %}
         </div>
 
