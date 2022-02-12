@@ -1,5 +1,11 @@
 {% extends 'layout.html' %} <!--asi indicamos que esto sera un bloque de un layout o doc padre--> 
 
 {% block content %}
+  <!--que pasa si tengo un contenido por defecto en un bloque,-->
+    <!--aparecera cada que no este asignado el contenido a un child en una ruta-->
+    <!--para que aparesca siempre el contenido por defecto, mas el child debemos 
+    poner el siguiente bloque para que el child herede del padre-->
+{{ block.super }} 
+
 <h1>holamundo con django</h1>
 {% endblock %}
