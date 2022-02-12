@@ -1,5 +1,26 @@
-/*la carpeta static se usa para todo contenido estatico como imagenes, css etc*/
+/*la carpeta static se usa para todo contenido estatico como imagenes, css etc
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: lightblue;
+}*/
+
+*{ /*este selector se usa para que se apliquen los estilos a todos los elementos de la pagina*/
+font-family: 'Courier New', Courier, monospace;
+text-decoration: none;
+margin: 2px;
+padding: 1px;
+
+}
+
+body{
+    background-color: whitesmoke;
+
+}
+
+header{
+    width: 1212px;
+    height: 140px;
+    background-color: aqua;
+    color: white;
+    margin: auto;
 }

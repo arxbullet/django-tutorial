@@ -8,20 +8,31 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
     </head>
     <body>
+        <header>
+            <div id="logotipo">
+
+            </div>
+            <h1>sitio web con django</h1>
+        </header>
+
         <h1>{% block title%}
             {% endblock %}
         </h1>
+
+        <nav>
         <ul>
             <li> <a href = '/'> inicio </a> </li>
             <li> <a href = '/holamundo'> hola mundo </a> </li>
             <li> <a href = '/pagina-pruebas'> pagina pruebas </a> </li>
             <li> <a href = '/pagina-contactos'> pagina contactos </a> </li>
         </ul>
+        </nav>
         <hr/>
         <!--para que esto sirva como plantilla layout crearemos bloques
         y con las llaves y porcentajes sustituimos contenido por otros templates,
         para eso dentro de cada template extendimos a que bloque sustituiran-->
         <div id="content">
+            <h2 class = 'title'> titulo de prueba</h2>
             {% block content%}
             <strong>contenido por defecto</strong>
             {% endblock %}
