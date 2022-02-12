@@ -39,7 +39,10 @@ def index(request):#inicio
     html += '</ul>'
 
     #concatenare el layout al html 
-    return HttpResponse(layout+ html)
+    #return HttpResponse(layout+ html)
+
+    #enlazar html de los templates con render
+    return render(request, 'index.html')
     '''return HttpResponse("""
     <h1>inicio</h1>
     """)'''
@@ -64,9 +67,7 @@ def contacto(request, nombre='valentina'):#para que este codigo no de error si n
 
 def hola_mundo(request):
     #return HttpResponse('holamundo con django') esto es una respuesta http
-    return HttpResponse(layout+"""<h1>holamundo con django</h1>""") #tambien puedo devolver html
-
+    #return HttpResponse(layout+"""<h1>holamundo con django</h1>""") tambien puedo devolver html
+    return render(request, 'holamundo.html')
 
 #para que este metodo funcione debo cargarlo en una url en urls.py
-
-
