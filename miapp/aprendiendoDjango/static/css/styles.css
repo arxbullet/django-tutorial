@@ -13,7 +13,7 @@ padding: 1px;
 }
 
 body{
-    background-color: whitesmoke;
+    background-color: #d1d4d6;
 
 }
 
@@ -85,7 +85,7 @@ nav ul li a:hover{
 .barra{
     width: 1250px;
     margin: 0 auto;
-    margin-bottom: 140px;
+    margin-bottom: 40px;
 }
 
 .esquina-izquierda{
@@ -108,4 +108,26 @@ nav ul li a:hover{
     background-color: #2b2f30;
     height: 10px;
     float: left;
+}
+
+#content{
+    width: 1250px;
+    min-height: 930px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.box{
+    background: white;
+    width: 90%;
+    min-height: 930px;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.title{
+    color: #444;
+    letter-spacing: 1px;
+    font-size: 30px;
 }
