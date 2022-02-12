@@ -1,0 +1,5 @@
+/*la carpeta static se usa para todo contenido estatico como imagenes, css etc*/
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: lightblue;
+}
