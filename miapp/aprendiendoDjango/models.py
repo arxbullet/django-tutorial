@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 
 # Create your models here.
@@ -7,8 +8,11 @@ from django.db import models
 #crear modelo
 
 class Article(models.Model): #esto creara la tabla article
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=60)
     content = models.TextField()
+    #ejecutar cambios (nuevo campo y mas capacidades)
+    #luego de eso debo ejecutar nuevamente py manage makemigrations y los 2 comandos siguientes
+    image = models.ImageField(default='null')
     public = models.BooleanField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
