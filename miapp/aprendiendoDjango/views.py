@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from aprendiendoDjango.models import Article, Category
 
 # Create your views here.
 
@@ -76,3 +77,16 @@ def hola_mundo(request):
     return render(request, 'holamundo.html')
 
 #para que este metodo funcione debo cargarlo en una url en urls.py
+
+#NUEVA VISTA PARA EJECUTAR MODELOS EN LAS VIEWS
+
+def crear_articulo(request): #mi primer endpoint
+    #usar model 
+    articulo = Article(
+        title = 'primer articulo',
+        content = 'este es mi primer articulo',
+        public = True
+        ) #debo pasarle los campos obligatorios como minimo
+
+    articulo.save()
+    return HttpResponse('articulo creado')
