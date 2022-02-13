@@ -100,3 +100,22 @@ def mostrar_articulo(request):
     #tambien puedo pasarle condiciones
     return HttpResponse(f'articulo : {articulo.title} ')
 
+#actualizar registros
+
+def editar_articulo(request , id=1):
+    article = Article.objects.get(id = id)
+
+    article.title = 'articulo actualizado'
+    article.content = 'este es un articulo actualizado'
+    article.public = True
+
+    article.save()
+
+    return HttpResponse(f'el articulo : {article.title}, ha sido editado')
+
+def articulos(request):
+    article = Article.objects.all()
+    
+    return render(request, 'articulos.html', {
+        'articulos' : article
+    })

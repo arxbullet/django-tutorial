@@ -33,7 +33,9 @@ urlpatterns = [
     #para que la ruta de arriba no de errores si llega el parametro, debo configurar una ruta para cada caso
     path('pagina-contactos/', views.contacto , name='contactos'),
     path('crear-articulo', views.crear_articulo, name='nuevo_a'),
+    path('articulos', views.articulos, name='all'),
     path('mostrar-articulo', views.mostrar_articulo, name='mostrar_a'),
+    path('editar-articulo/<int:id>', views.editar_articulo, name='editar_a'),
     path('holamundo', views.hola_mundo, name='hola_mundo')#paso el nombre  de la ruta y la funcion a ajecutar
 ]
 

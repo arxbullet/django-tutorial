@@ -1,0 +1,14 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+<h1>Listado de articulos</h1>
+
+<ul>
+    {% for articulo in articles %}
+        <li>{{articulo}} 
+        {%empty%}
+        <p>no hay articulos</p>
+    {% endfor %}
+    </ul>
+ 
+{% endblock %}
