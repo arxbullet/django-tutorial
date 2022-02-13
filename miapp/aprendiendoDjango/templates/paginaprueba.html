@@ -1,5 +1,18 @@
 {% extends 'layout.html' %} 
 
 {% block content %}
+<!--filtros con django-->
 <h1>pagina de mi web</h1>
+<p>{{'creada por mi'|cut:" "  }} </p> <!-- cut corta lo que indiquemos en las comillas
+, en este caso corta los espacios-->
+
+{{texto |default:'no hay nada'  }}
+
+<!--{{lista|firts : primer elemento}}
+|join : ' ,' añade un , a cada elemento, o lo que le diga que añada
+|length : me da la longitud  
+|upper : pone el texto en mayuscula ,
+
+existen muchos mas filtros y hasta se pueden crear uno, tambien se pueden combinar los filtros-->
+
 {% endblock %}
