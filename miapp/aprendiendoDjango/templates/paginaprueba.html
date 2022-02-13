@@ -8,7 +8,11 @@
 
 {{texto |default:'no hay nada'  }}
 
-<!--{{lista|firts : primer elemento}}
+{% load filters %}
+
+{{"bla"|saludo|safe}}
+
+<!--lista|firts : primer elemento
 |join : ' ,' añade un , a cada elemento, o lo que le diga que añada
 |length : me da la longitud  
 |upper : pone el texto en mayuscula ,
