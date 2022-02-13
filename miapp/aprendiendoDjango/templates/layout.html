@@ -21,10 +21,12 @@
 
         <nav>
         <ul>
-            <li> <a href = '/'> inicio </a> </li>
+            <!-- Tambien puedo tener rutas dinamicas pasando al menu un href con el nombre de mis rutas-->
+            <li> <a href = '{% url 'inicio' %}'> inicio </a> </li>
             <li> <a href = '/holamundo'> hola mundo </a> </li>
             <li> <a href = '/pagina-pruebas'> pagina pruebas </a> </li>
-            <li> <a href = '/pagina-contactos'> pagina contactos </a> </li>
+            <!--de esta forma tambien puedo pasar los parametros de forma dinamica-->
+            <li> <a href = '{% url 'contactos' 'nombre' %}'> pagina contactos </a> </li>
         </ul>
         </nav>
         <div class="barra">
@@ -45,6 +47,9 @@
         </div>
         </div>
 
-        <footer>master en python curso</footer>
+        <footer>master en python curso
+            - {% now 'Y/m/d'%} <!-- django tambien tiene esta funcionalidad para obtener 
+            fechas desde el servidor-->
+        </footer>
     </body>
 </html>
