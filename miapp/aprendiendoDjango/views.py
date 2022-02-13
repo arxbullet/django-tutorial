@@ -45,8 +45,9 @@ def index(request):#inicio
     #return render(request, 'index.html')
 
     #pasar parametros a html
-    return render(request, 'index.html', {'mivariable':'soy un dato'})#pasamos una tupla como tercer parametro
-    
+    return render(request, 'index.html', {'mivariable':'soy un dato',
+                                        'nombre':'vale'})#pasamos una tupla como tercer parametro
+
     '''return HttpResponse("""
     <h1>inicio</h1>
     """)'''
