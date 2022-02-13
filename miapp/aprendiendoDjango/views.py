@@ -1,3 +1,4 @@
+from ctypes import HRESULT
 from django.shortcuts import render, HttpResponse, redirect
 from aprendiendoDjango.models import Article, Category
 
@@ -87,6 +88,15 @@ def crear_articulo(request): #mi primer endpoint
         content = 'este es mi primer articulo',
         public = True
         ) #debo pasarle los campos obligatorios como minimo
+          #tambien puedo pasar los campos por parametros de url como vimos anteriormente
 
     articulo.save()
     return HttpResponse('articulo creado')
+
+def mostrar_articulo(request):
+    #puedo hacer un try en caso de que no venga el articulo
+    articulo = Article.objects.get(id=1, public = True) #objects accede al modelo y a sus objetos para hacer
+    #consulta a esos objetos, puedo pasarle varios parametros como id, pk, title, etc,
+    #tambien puedo pasarle condiciones
+    return HttpResponse(f'articulo : {articulo.title} ')
+
