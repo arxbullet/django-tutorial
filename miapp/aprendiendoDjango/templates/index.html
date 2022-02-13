@@ -5,6 +5,8 @@ el codigo de html que retornamos de las funciones y el codigo python-->
 {% block content %}
 <h1>inicio</h1>
 
+<!--mostrar variables y condicionales-->
+
 {{mivariable}}<!--los dobles corchetes me permiten acceder a variables-->
 
 {%if nombre %} <!--esto me permite usar todos los operadores conocidos-->
@@ -13,7 +15,16 @@ el codigo de html que retornamos de las funciones y el codigo python-->
     <strong> el nombre no existe</strong>
 {% endif%}
 
+<h3> lenguajes de programacion</h3>
+<!--usar bucles-->
+<ul>
 
+{% for lenguaje in lenguajes %}
+    <li>{{lenguaje}} {{forloop.first}}<!--muestra si es el primer elemento o no, tambien puedo poner .last o .counter--></li>
+    {%empty%}<!--sirve en caso que la lista venga vacia-->
+    <p>no hay lenguajes</p>
+{% endfor %}
+</ul>
 <p> años hasta el 2050: </p>
 {% endblock %}
 <!-- para vincular la vista usare el metodo render en las views-->

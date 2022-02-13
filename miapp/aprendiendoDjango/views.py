@@ -38,6 +38,8 @@ def index(request):#inicio
     
     html += '</ul>'
 
+    lenguajes = ['java', 'c#']
+
     #concatenare el layout al html 
     #return HttpResponse(layout+ html)
 
@@ -46,7 +48,8 @@ def index(request):#inicio
 
     #pasar parametros a html
     return render(request, 'index.html', {'mivariable':'soy un dato',
-                                        'nombre':'vale'})#pasamos una tupla como tercer parametro
+                                        'nombre':'vale',
+                                        'lenguajes': lenguajes})#pasamos una tupla como tercer parametro
 
     '''return HttpResponse("""
     <h1>inicio</h1>
