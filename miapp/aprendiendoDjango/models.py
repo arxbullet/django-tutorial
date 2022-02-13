@@ -18,3 +18,10 @@ class Category(models.Model):
     description = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
 
+#cada que haga un cambio en mi estructura sql necesito hacer una migración
+# esto se hace con el comando python manage.py makemigrations
+# luego hay que crear el sql que se ejecutara realmente com el siguiente comando:
+# python manage.py sqlmigrate nombredeapp numerodemigracion
+# luego para ejecutar este codigo sql debo ir a la consola y escribir :
+# python manage.py migrate
+# para comprobar que se ejecuto esto en sqlite puedo descargar sqlitebrowser 
