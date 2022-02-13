@@ -5,6 +5,11 @@ el codigo de html que retornamos de las funciones y el codigo python-->
 {% block content %}
 <h1>inicio</h1>
 
+<!--cargar una template dentro de otra, y 
+les puedo pasar valores heredados desde views a index, como nombre, 
+ademas de eso puedo crear variables y pasarselas-->
+{% include  'fechaActual.html' with saludo='este es un saludo' %} <!--si paso el valor only, solo recibira la variable que cree-->
+
 <!--mostrar variables y condicionales-->
 
 {{mivariable}}<!--los dobles corchetes me permiten acceder a variables-->
