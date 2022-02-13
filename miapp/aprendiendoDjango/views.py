@@ -42,7 +42,11 @@ def index(request):#inicio
     #return HttpResponse(layout+ html)
 
     #enlazar html de los templates con render
-    return render(request, 'index.html')
+    #return render(request, 'index.html')
+
+    #pasar parametros a html
+    return render(request, 'index.html', {'mivariable':'soy un dato'})#pasamos una tupla como tercer parametro
+    
     '''return HttpResponse("""
     <h1>inicio</h1>
     """)'''
