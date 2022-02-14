@@ -1,6 +1,7 @@
 from ctypes import HRESULT
 from django.shortcuts import render, HttpResponse, redirect
 from aprendiendoDjango.models import Article, Category
+from django.db.models import Q
 
 # Create your views here.
 
@@ -115,6 +116,7 @@ def editar_articulo(request , id=1):
 
 def articulos(request):
     article = Article.objects.all()
+    #order by 
     #tambieb tengo la opcion de listarlos ordenados de la siguiente forma
     #article = Article.objects.order_by(-propiedad), propiedad puede ser id, title, etc
     # el signo menos indica que es descendente, sin el se ordena de forma ascendente
@@ -125,7 +127,8 @@ def articulos(request):
     # article = Article.objects.filter(propiedad = "batman") , la propiedad puede ser title, id etc
     # tambien puedo poner varias condiciones separadas de una coma.
 
-    #lookup , es como hacer un like en sql, saca algo mas preciso, se accede a estos con dos guines bajos
+    #lookup
+    #es como hacer un like en sql, saca algo mas preciso, se accede a estos con dos guines bajos
     #despues de la propiedad
     # article = Article.objects.filter(propiedad__exact = "batman")
     # algunos otros lookup son 
@@ -134,12 +137,19 @@ def articulos(request):
     # __gte = grater than equal, mayor o igual
     # __lt = lower than , menor que el filtro
     # __contains = que contenga cierto caracter o palabra o frase.
-
     #dentro de parentesis de filter, puedo tener varios lookup asi como varias condiciones.
 
     #exclude 
     #sirve para eliminar ciertas respuestas segun una condicion, quita elementos
     # article = Article.objects.filter(propiedad__exact = "batman").exclude(public = True)
+
+    #ejecutar sql en django
+    #article = Article.objects.raw("select * from aprendiendoDjango_article where title="Batman"; ")
+
+    #consultas ORM django
+    #articulos = Article.objects.filter(
+    # Q(title_contains="2") | Q(title_contains="3"))
+    # de esta forma podemos hacer uso del operador logico or
 
 
     return render(request, 'articulos.html', {
