@@ -137,6 +137,10 @@ def articulos(request):
 
     #dentro de parentesis de filter, puedo tener varios lookup asi como varias condiciones.
 
+    #exclude 
+    #sirve para eliminar ciertas respuestas segun una condicion, quita elementos
+    # article = Article.objects.filter(propiedad__exact = "batman").exclude(public = True)
+
 
     return render(request, 'articulos.html', {
         'articulos' : article})
