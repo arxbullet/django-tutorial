@@ -3,6 +3,12 @@
 {% block content %}
 <h1>formularios con django</h1>
 
+<!--comprobar si el form viene con errores, para que esto funcione debo 
+indicar las validaciones en la clase con form.validatos-->
+{% if form.errors%}
+    <strong class='rojo'>hay errores en el form</strong>
+{%endif%}
+
 <form action={% url 'save-article' %} method="POST">
     {% csrf_token %} 
    

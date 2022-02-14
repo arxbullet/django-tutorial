@@ -118,6 +118,11 @@ nav ul li a:hover{
     margin-top: 20px;
 }
 
+.rojo{
+    color: red;
+    box-shadow: 0px 00px 4px black;
+}
+
 .box{
     background: white;
     width: 90%;

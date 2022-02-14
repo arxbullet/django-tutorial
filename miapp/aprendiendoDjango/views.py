@@ -138,6 +138,10 @@ def create_form_article(request):
 
             return redirect(request, 'all')
             #return HttpResponse(articulo.title + ' - ' + articulo.content + ' - ' +articulo.public)
+        else :
+            formulario = FormularioArticulo()
+            return render(request, 'create_class_form.html',{
+            'form' : formulario})
 
     else :
         formulario = FormularioArticulo()
