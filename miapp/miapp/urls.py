@@ -34,6 +34,7 @@ urlpatterns = [
     path('pagina-contactos/', views.contacto , name='contactos'),
     path('crear-articulo', views.crear_articulo, name='nuevo_a'),
     path('articulos', views.articulos, name='all'),
+    path('borrar-articulos/<int:id>', views.eliminar_articulo, name='borrar'),
     path('mostrar-articulo', views.mostrar_articulo, name='mostrar_a'),
     path('editar-articulo/<int:id>', views.editar_articulo, name='editar_a'),
     path('holamundo', views.hola_mundo, name='hola_mundo')#paso el nombre  de la ruta y la funcion a ajecutar

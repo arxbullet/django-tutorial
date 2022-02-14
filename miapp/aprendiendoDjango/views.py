@@ -122,3 +122,10 @@ def articulos(request):
     #article = Article.objects.order_by(-propiedad)[:3] o del 7 al 7 [3:7]
     return render(request, 'articulos.html', {
         'articulos' : article})
+
+def eliminar_articulo(request, id):
+
+    article = Article.objects.get(pk=id)
+    article.delete()
+
+    return redirect('all')

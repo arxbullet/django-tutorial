@@ -5,9 +5,11 @@
 
 <ul>
     {% for articulo in articulos %}
-        <li>{{articulo.id}} {{articulo.title}}</li>
-            {%empty%}
+        <li>{{articulo.id}} {{articulo.title}}
+        <a href="{% url 'borrar' id=articulo.id %}"> eliminar </a>
+        {%empty%}
             <p>no hay articulos</p>
+    </li>
     {% endfor %}
     </ul>
  
