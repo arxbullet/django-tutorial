@@ -115,7 +115,10 @@ def editar_articulo(request , id=1):
 
 def articulos(request):
     article = Article.objects.all()
-    
+    #tambieb tengo la opcion de listarlos ordenados de la siguiente forma
+    #article = Article.objects.order_by(-propiedad), propiedad puede ser id, title, etc
+    # el signo menos indica que es descendente, sin el se ordena de forma ascendente
+    #tambien puedo poner un limite a la cantidad de elementos : 
+    #article = Article.objects.order_by(-propiedad)[:3] o del 7 al 7 [3:7]
     return render(request, 'articulos.html', {
-        'articulos' : article
-    })
+        'articulos' : article})

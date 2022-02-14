@@ -4,10 +4,10 @@
 <h1>Listado de articulos</h1>
 
 <ul>
-    {% for articulo in articles %}
-        <li>{{articulo}} 
-        {%empty%}
-        <p>no hay articulos</p>
+    {% for articulo in articulos %}
+        <li>{{articulo.id}} {{articulo.title}}</li>
+            {%empty%}
+            <p>no hay articulos</p>
     {% endfor %}
     </ul>
  
