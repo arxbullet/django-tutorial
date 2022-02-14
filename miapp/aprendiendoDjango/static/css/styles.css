@@ -5,7 +5,7 @@ body{
 }*/
 
 *{ /*este selector se usa para que se apliquen los estilos a todos los elementos de la pagina*/
-font-family: 'Courier New', Courier, monospace;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 text-decoration: none;
 margin: 2px;
 padding: 1px;
@@ -124,6 +124,46 @@ nav ul li a:hover{
     min-height: 930px;
     padding: 20px;
     border: 1px solid #ddd;
+}
+
+.box form{
+    width: 40%;
+}
+
+.box form input,
+.box form label{
+    display: block;
+    padding-left: 0px;
+}
+
+
+.box form input[type="text"],
+.box form textarea{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.box form select{
+    width: 100px;
+    padding:5px;
+}
+
+.box form input[type="submit"],
+.box form input[type="button"],
+.box form button{
+    padding: 10px;
+    margin-top: 5px;
+    background:#2ba977;
+    border: 1px solid #444;
+    color: white;
+    transition: 300ms;
+}
+
+.box form input[type="submit"]:hover,
+.box form input[type="button"]:hover,
+.box form button :hover{
+    background:#1f7e50;
+    cursor: pointer;
 }
 
 .title{
