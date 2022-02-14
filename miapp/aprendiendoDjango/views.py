@@ -120,6 +120,24 @@ def articulos(request):
     # el signo menos indica que es descendente, sin el se ordena de forma ascendente
     #tambien puedo poner un limite a la cantidad de elementos : 
     #article = Article.objects.order_by(-propiedad)[:3] o del 7 al 7 [3:7]
+
+    #condiciones de busqueda 
+    # article = Article.objects.filter(propiedad = "batman") , la propiedad puede ser title, id etc
+    # tambien puedo poner varias condiciones separadas de una coma.
+
+    #lookup , es como hacer un like en sql, saca algo mas preciso, se accede a estos con dos guines bajos
+    #despues de la propiedad
+    # article = Article.objects.filter(propiedad__exact = "batman")
+    # algunos otros lookup son 
+    # __iexact = busqueda no case sensitive
+    # __gt = grater than, saca resultados mayor que el filtro 
+    # __gte = grater than equal, mayor o igual
+    # __lt = lower than , menor que el filtro
+    # __contains = que contenga cierto caracter o palabra o frase.
+
+    #dentro de parentesis de filter, puedo tener varios lookup asi como varias condiciones.
+
+
     return render(request, 'articulos.html', {
         'articulos' : article})
 
