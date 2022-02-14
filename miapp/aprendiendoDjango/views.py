@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from aprendiendoDjango.models import Article, Category
 from django.db.models import Q
+from aprendiendoDjango.forms import FormularioArticulo
 
 # Create your views here.
 
@@ -116,6 +117,11 @@ def create_article(request):
    
     return render(request, 'create-article.html')
 
+def create_form_article(request):
+    formulario = FormularioArticulo()
+    return render(request, 'create_class_form.html',{
+        'form' : formulario
+    })
 
 def mostrar_articulo(request):
     #puedo hacer un try en caso de que no venga el articulo

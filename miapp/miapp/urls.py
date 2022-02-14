@@ -39,6 +39,7 @@ urlpatterns = [
     path('editar-articulo/<int:id>', views.editar_articulo, name='editar_a'),
     path('save-article', views.save_article, name='save-article'),
     path('create-article', views.create_article, name='create-article'),
+    path('create_class_form', views.create_form_article, name='create_class_form'),
     path('holamundo', views.hola_mundo, name='hola_mundo')#paso el nombre  de la ruta y la funcion a ajecutar
 ]
 

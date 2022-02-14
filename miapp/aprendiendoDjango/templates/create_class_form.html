@@ -1,0 +1,15 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+<h1>formularios con django</h1>
+
+<form action={% url 'save-article' %} method="POST">
+    {% csrf_token %} 
+   
+       {{form}} <!--form soporta varios metodos como __asp que encierra los campos en un parrafo-->
+       <button>GUARDAR</button>
+   
+   </form>
+
+   
+{% endblock %}
