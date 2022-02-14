@@ -118,8 +118,30 @@ def create_article(request):
     return render(request, 'create-article.html')
 
 def create_form_article(request):
-    formulario = FormularioArticulo()
-    return render(request, 'create_class_form.html',{
+    if request.method == "POST" :
+        formulario = FormularioArticulo(request.POST)
+
+        if formulario.is_valid():
+            datos_form = formulario.cleaned_data
+
+            title= datos_form.get('title')
+            content = datos_form['content']
+            public = datos_form['public']
+
+            articulo = Article(
+            title = title,
+            content = content,
+            public = public
+            )
+
+            articulo.save()
+
+            return redirect(request, 'all')
+            #return HttpResponse(articulo.title + ' - ' + articulo.content + ' - ' +articulo.public)
+
+    else :
+        formulario = FormularioArticulo()
+        return render(request, 'create_class_form.html',{
         'form' : formulario
     })
 
