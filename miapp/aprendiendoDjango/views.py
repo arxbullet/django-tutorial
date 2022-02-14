@@ -1,4 +1,3 @@
-from ctypes import HRESULT
 from django.shortcuts import render, HttpResponse, redirect
 from aprendiendoDjango.models import Article, Category
 from django.db.models import Q
@@ -94,6 +93,30 @@ def crear_articulo(request): #mi primer endpoint
     articulo.save()
     return HttpResponse('articulo creado')
 
+def save_article(request):
+    if request.method == "GET" :
+
+        title =  request.GET['title']
+        content =  request.GET['content']
+        public =  request.GET['public']
+
+        articulo = Article(
+            title = title,
+            content = content,
+            public = public
+            )
+
+        articulo.save()
+        return HttpResponse('articulo creado')
+    else :
+        return HttpResponse('no se ha podido crear el articulo ')
+        
+
+def create_article(request):
+   
+    return render(request, 'create-article.html')
+
+
 def mostrar_articulo(request):
     #puedo hacer un try en caso de que no venga el articulo
     articulo = Article.objects.get(id=1, public = True) #objects accede al modelo y a sus objetos para hacer
@@ -161,3 +184,4 @@ def eliminar_articulo(request, id):
     article.delete()
 
     return redirect('all')
+

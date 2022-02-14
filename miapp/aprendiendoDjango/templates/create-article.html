@@ -1,0 +1,22 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+<h1>formularios con django</h1>
+
+<form action={% url 'save-article' %} method="GET">
+    <label for="title"> TITULO </label>
+    <input type='text' name='title' placeholder='pon el nombre del articulo'></input> 
+
+    <label for="content"> CONTENIDO </label>
+    <textarea name='content'></textarea> 
+
+    <label for="public"> PUBLICADO O NO </label>
+    <select name='public'>
+        <option value='True'>PUBLICADO</option>
+        <option value='false'>NO PUBLICADO</option>
+    </select> 
+    <button>GUARDAR</button>
+
+</form>
+
+{% endblock %}

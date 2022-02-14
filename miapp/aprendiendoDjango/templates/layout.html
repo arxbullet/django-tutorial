@@ -15,10 +15,6 @@
             </div>
         </header>
 
-        <h1>{% block title%}
-            {% endblock %}
-        </h1>
-
         <nav>
         <ul>
             <!-- Tambien puedo tener rutas dinamicas pasando al menu un href con el nombre de mis rutas-->
@@ -28,6 +24,7 @@
             <!--de esta forma tambien puedo pasar los parametros de forma dinamica-->
             <li> <a href = '{% url 'contactos' 'nombre' %}'> pagina contactos </a> </li>
             <li> <a href = '{% url 'all'  %}'> listado de articulos </a> </li>
+            <li> <a href = '{% url 'create-article'  %}'> crear articulos </a> </li>
         </ul>
         </nav>
         <div class="barra">
@@ -36,16 +33,18 @@
             <span class="esquina-derecha"></span>  
         </div> 
 
+        
+
         <!--para que esto sirva como plantilla layout crearemos bloques
         y con las llaves y porcentajes sustituimos contenido por otros templates,
         para eso dentro de cada template extendimos a que bloque sustituiran-->
         <div id="content">
             <div class="box">
-            <h2 class = 'title'> titulo de prueba</h2>
-            {% block content%}
-            <strong>contenido por defecto</strong>
-            {% endblock %}
-        </div>
+                <h2 class = 'title'> titulo de prueba</h2>
+                {% block content%}
+                <strong>contenido por defecto</strong>
+                {% endblock %}
+            </div>
         </div>
 
         <footer>master en python curso
