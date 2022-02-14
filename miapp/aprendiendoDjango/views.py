@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from aprendiendoDjango.models import Article, Category
 from django.db.models import Q
 from aprendiendoDjango.forms import FormularioArticulo
+from django.contrib import messages
 
 # Create your views here.
 
@@ -135,6 +136,10 @@ def create_form_article(request):
             )
 
             articulo.save()
+
+            #crear mensaje flash 
+
+            messages.success(request, f'has creado correctamente el articulo {articulo.title}')
 
             return redirect(request, 'all')
             #return HttpResponse(articulo.title + ' - ' + articulo.content + ' - ' +articulo.public)

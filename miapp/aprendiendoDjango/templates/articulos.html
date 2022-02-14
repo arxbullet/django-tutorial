@@ -3,6 +3,11 @@
 {% block content %}
 <h1>Listado de articulos</h1>
 
+{%if messages%}
+    {%for message in messages%}
+        {{message}}
+    {%endfor%}
+{%endif%}
 <ul>
     {% for articulo in articulos %}
         <li>{{articulo.id}} {{articulo.title}}
