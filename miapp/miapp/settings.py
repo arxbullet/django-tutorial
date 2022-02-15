@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     #cargar mi app para que funcionen mis configuraciones,
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'aprendiendoDjango'
+    'aprendiendoDjango.apps.AprendiendodjangoConfig'
 ]
 
 MIDDLEWARE = [
