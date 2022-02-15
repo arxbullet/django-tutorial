@@ -9,3 +9,12 @@ class ArticleAdmin(admin.ModelAdmin):
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Category)
+
+#configurar titulo panel
+
+admin.site.site_header = 'MASTER EN PYTHON'
+
+#cambiar subtitulo panel 
+
+admin.site.site_title = 'MASTER EN PYTHON'
+admin.site.index_title = 'panel de gestion'

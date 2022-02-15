@@ -53,3 +53,13 @@ urlpatterns = [
 if settings.DEBUG :
     from django.conf.urls.static import static
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+#configurar titulo panel
+
+admin.site.site_header = 'MASTER EN PYTHON'
+
+#cambiar subtitulo panel 
+
+admin.site.site_title = 'MASTER EN PYTHON'
+admin.site.index_title = 'panel de gestion'
+
