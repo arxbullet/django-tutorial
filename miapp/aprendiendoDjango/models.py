@@ -25,6 +25,9 @@ class Article(models.Model): #esto creara la tabla article
         verbose_name_plural = 'Articulos'
         ordering = ['id']
 
+    #metodos magicos , este nos imprime los objetos con otro nombre en el panel de administracion
+    def __str__(self):
+        return f'{self.title} creado el {self.created_at}'
 
 class Category(models.Model): 
     name = models.CharField(max_length=50)
