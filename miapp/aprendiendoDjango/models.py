@@ -14,7 +14,7 @@ class Article(models.Model): #esto creara la tabla article
     content = models.TextField(verbose_name='contenido')
     #ejecutar cambios (nuevo campo y mas capacidades)
     #luego de eso debo ejecutar nuevamente py manage makemigrations y los 2 comandos siguientes
-    image = models.ImageField(default='null',verbose_name='imagen')
+    image = models.ImageField(default='null',verbose_name='imagen' , upload_to= 'articles' )
     public = models.BooleanField(verbose_name='publico')
     created_at = models.DateTimeField(auto_now_add=True,verbose_name='creado el ')
     updated_at = models.DateTimeField(auto_now_add=True,verbose_name='actualizado el ')

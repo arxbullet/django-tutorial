@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
 
 #importar app con mis vistas
 from aprendiendoDjango import views
@@ -45,3 +46,10 @@ urlpatterns = [
 
 #aca debo cargar mis vistas 
 
+
+# config para saber si estoy en modo debug y poder ver imagenes en el 
+#admin de django
+
+if settings.DEBUG :
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
