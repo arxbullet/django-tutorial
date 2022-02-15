@@ -1,4 +1,5 @@
 from email.policy import default
+from tabnanny import verbose
 from django.db import models
 
 # Create your models here.
@@ -17,10 +18,21 @@ class Article(models.Model): #esto creara la tabla article
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
+    #la clase meta sirve para asignarle nombres singulares, plugares y orden a nuestras tablas
+    class Meta:
+        verbose_name ='Articulo'
+        verbose_name_plural = 'Articulos'
+        ordering = ['id']
+
+
 class Category(models.Model): 
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name ='categoria'
+        verbose_name_plural = 'categorias'
 
 #cada que haga un cambio en mi estructura sql necesito hacer una migración
 # esto se hace con el comando python manage.py makemigrations
