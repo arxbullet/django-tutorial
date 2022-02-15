@@ -17,6 +17,11 @@ body{
 
 }
 
+.clearfix{
+    clear: both;
+    float: none;
+}
+
 header{
     width: 1212px;
     height: 140px;
@@ -121,6 +126,30 @@ nav ul li a:hover{
 .rojo{
     color: red;
     box-shadow: 0px 00px 4px black;
+}
+
+.article{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 1px solid #eee;
+    
+}
+
+.article .image{
+   width: 200px;
+   height: 200px;
+   float: left;  
+   overflow: hidden;
+   clear: both;
+}
+
+.article .image .img{
+    height: 200px;
+}
+
+.article .data{
+    float: left;
+    padding: 15px;
 }
 
 .box{

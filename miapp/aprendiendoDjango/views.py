@@ -175,7 +175,8 @@ def editar_articulo(request , id=1):
     return HttpResponse(f'el articulo : {article.title}, ha sido editado')
 
 def articulos(request):
-    article = Article.objects.all()
+    #article = Article.objects.all()
+    article = Article.objects.filter(public = True)
     #order by 
     #tambieb tengo la opcion de listarlos ordenados de la siguiente forma
     #article = Article.objects.order_by(-propiedad), propiedad puede ser id, title, etc

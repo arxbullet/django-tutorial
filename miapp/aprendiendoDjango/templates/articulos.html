@@ -10,11 +10,20 @@
 {%endif%}
 <ul>
     {% for articulo in articulos %}
-        <li>{{articulo.id}} {{articulo.title}}
+        <article class='article'>   
+        {%if articulo.image != null and articulo.image.url != null and articulo.image.url|length >= 1  %}
+        <div class='image'>    
+            <img src="{{articulo.image.url}}"/>
+        </div>
+        {%endif%}
+         <div data>
+           {{articulo.title}}
         <a href="{% url 'borrar' id=articulo.id %}"> eliminar </a>
+        </div> 
         {%empty%}
             <p>no hay articulos</p>
-    </li>
+        <div class='clearfix'></div>
+        </article>
     {% endfor %}
     </ul>
  
