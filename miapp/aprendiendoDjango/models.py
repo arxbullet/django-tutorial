@@ -9,14 +9,15 @@ from django.db import models
 #crear modelo
 
 class Article(models.Model): #esto creara la tabla article
-    title = models.CharField(max_length=60)
-    content = models.TextField()
+    #para modificar los nombres de los campos uso verbose name
+    title = models.CharField(max_length=60, verbose_name='titulo')
+    content = models.TextField(verbose_name='contenido')
     #ejecutar cambios (nuevo campo y mas capacidades)
     #luego de eso debo ejecutar nuevamente py manage makemigrations y los 2 comandos siguientes
-    image = models.ImageField(default='null')
-    public = models.BooleanField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(default='null',verbose_name='imagen')
+    public = models.BooleanField(verbose_name='publico')
+    created_at = models.DateTimeField(auto_now_add=True,verbose_name='creado el ')
+    updated_at = models.DateTimeField(auto_now_add=True,verbose_name='actualizado el ')
 
     #la clase meta sirve para asignarle nombres singulares, plugares y orden a nuestras tablas
     class Meta:
